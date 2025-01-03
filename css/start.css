@@ -9,14 +9,21 @@
   height: 100vh;
   overflow-y: hidden;
 }
-.wrapper {
-  width: 55%;
-  height: 60%;
+.wrapper2 {
   display: flex;
   align-items: center;
-  background-color: greenyellow;
-  padding: 80px;
   justify-content: space-between;
+  width: 100%;
+}
+.wrapper {
+  padding: 20px 80px;
+  width: 55%;
+  height: 70%;
+  background-color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .play {
   position: absolute;
