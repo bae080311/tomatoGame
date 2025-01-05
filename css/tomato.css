@@ -22,6 +22,7 @@
   border: 1px solid green;
   display: flex;
   justify-items: end;
+  align-items: end;
   height: 90%;
 }
 .cur {
