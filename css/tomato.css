@@ -24,6 +24,7 @@
   justify-items: end;
   align-items: end;
   height: 90%;
+  width: 20px;
 }
 .cur {
   background-color: green;
@@ -34,4 +35,5 @@
   flex-direction: column;
   height: 100%;
   gap: 10px;
+  align-items: end;
 }
