@@ -4,6 +4,7 @@ const currentGage = document.querySelector(".cur"); // 현재 게이지
 let time = 100; // 남은 시간
 
 const score = document.querySelector(".score"); // 점수
+let CurScore = 0; // 현재 점수
 
 // timer count down function
 function countDown() {

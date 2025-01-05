@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 20px 80px;
+  padding: 20px 50px;
   width: 55%;
   height: 70%;
   background-color: greenyellow;
@@ -15,11 +15,12 @@
   overflow-y: hidden;
 }
 .canvas {
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 500px;
+  background-color: white;
 }
 .max {
-  border: 1px solid green;
+  border: 2px solid green;
   display: flex;
   justify-items: end;
   align-items: end;
@@ -41,9 +42,14 @@
 .Btn {
   background-color: greenyellow;
   color: white;
-  padding: 10px 20px;
   border-radius: 5px;
   border: 2px solid white;
   cursor: pointer;
   font-weight: bold;
+}
+
+.score {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
