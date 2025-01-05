@@ -28,7 +28,7 @@ function countDown() {
 tomato.onload = () => {
   const canvasWidth = 800; // 캔버스의 가로 크기
   const canvasHeight = 500; // 캔버스의 세로 크기
-  const margin = 5; // 토마토 사이의 간격
+  const margin = 8; // 토마토 사이의 간격
 
   // 캔버스 크기 설정
   canvas.width = canvasWidth;
