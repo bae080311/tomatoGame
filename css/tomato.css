@@ -1,0 +1,36 @@
+.wrapper {
+  padding: 20px 80px;
+  width: 55%;
+  height: 70%;
+  background-color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.canvas {
+  width: 600px;
+  height: 600px;
+}
+.max {
+  border: 1px solid green;
+  display: flex;
+  justify-items: end;
+  height: 90%;
+}
+.cur {
+  background-color: green;
+  width: 100%;
+}
+.third {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+}
