@@ -5,7 +5,7 @@ let time = 100;
 
 // about score
 const score = document.querySelector(".score");
-let CurScore = 0;
+let curScore = 0;
 
 // about canvas and tomato
 const canvas = document.querySelector(".canvas");
@@ -29,7 +29,7 @@ function countDown() {
     currentGage.style.height = `${time}%`;
     time--;
     if (time === 0) {
-      alert("Game Over!");
+      alert("Game Over! " + curScore + "점을 획득하셨습니다.");
       location.reload();
     }
   }, 1000);
@@ -81,7 +81,7 @@ tomato.onload = () => {
       const x = col * (tomatoSize + margin) + margin;
       const y = row * (tomatoSize + margin) + margin;
 
-      const randomNumber = Math.floor(Math.random() * 9) + 1;
+      const randomNumber = Math.floor(Math.random() * 9) + 1; // 1~9
       tomatoes.push({ x, y, number: randomNumber });
 
       tomatoCount++;
@@ -129,5 +129,44 @@ canvas.addEventListener("mousemove", (e) => {
 // drag end event
 canvas.addEventListener("mouseup", () => {
   drag = false;
-  drawCanvas(); // 드래그 박스 제거
+
+  // Calculate the rectangle bounds
+  const rectX = Math.min(startX, curX);
+  const rectY = Math.min(startY, curY);
+  const rectWidth = Math.abs(curX - startX);
+  const rectHeight = Math.abs(curY - startY);
+
+  // Filter tomatoes inside the drag box
+  const insideTomatoes = tomatoes.filter(({ x, y }) => {
+    const tomatoSize = 52;
+    return (
+      x >= rectX &&
+      x + tomatoSize <= rectX + rectWidth &&
+      y >= rectY &&
+      y + tomatoSize <= rectY + rectHeight
+    );
+  });
+
+  // Sum the numbers of tomatoes inside the drag box
+  const sum = insideTomatoes.reduce((acc, { number }) => acc + number, 0);
+
+  // If the sum is exactly 10, remove those tomatoes
+  if (sum === 10) {
+    // Remove the tomatoes that are inside the drag box
+    const remainingTomatoes = tomatoes.filter(
+      (tomato) => !insideTomatoes.includes(tomato)
+    );
+
+    // Update tomatoes and score
+    curScore += insideTomatoes.length;
+    score.textContent = `Score: ${curScore}`;
+
+    tomatoes.length = 0;
+    tomatoes.push(...remainingTomatoes);
+
+    drawCanvas();
+  }
+
+  // Clear the selection box after mouse up
+  drawCanvas();
 });
