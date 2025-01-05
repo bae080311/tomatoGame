@@ -37,3 +37,13 @@
   gap: 10px;
   align-items: end;
 }
+
+.Btn {
+  background-color: greenyellow;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  cursor: pointer;
+  font-weight: bold;
+}
