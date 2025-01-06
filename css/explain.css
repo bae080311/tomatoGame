@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.wrapper {
+  padding: 20px 80px;
+  width: 55%;
+  height: 70%;
+  background-color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.explain {
+  font-weight: bolder;
+  font-size: 1.5em;
+}
