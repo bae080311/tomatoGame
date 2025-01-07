@@ -159,7 +159,7 @@ canvas.addEventListener("mouseup", () => {
 
     // Update tomatoes and score
     curScore += insideTomatoes.length;
-    score.textContent = `Score: ${curScore}`;
+    score.textContent = curScore;
 
     tomatoes.length = 0;
     tomatoes.push(...remainingTomatoes);
